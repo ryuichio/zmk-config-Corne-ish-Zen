@@ -37,6 +37,13 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp FSLH>, <&kp BSLH>;
                 };
+                td2: tap_dance_2 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_BACKSLASH";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp MINUS>, <&kp EQUAL>;
+                };
         };
 
         keymap {
@@ -45,12 +52,12 @@
                 default_layer {
                         label = "QWERTY";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// |  GUI |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  -=  |
+// |  GUI |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;' | ENT  |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /\ | ESC  |
 //                    | GUI | LWR | SPC |   | CTL | RSE  | ALT |
                         bindings = <
-   &kp ESC      &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &kp MINUS
+   &kp ESC      &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P &td2
    &mt LGUI TAB &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &td0  &kp RET
    &kp LSHFT    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &td1  &kp GRAVE
             &mt LGUI F13 &lt LOWER SPACE &kp LALT   &kp LCTRL &lt RAISE BSPC &mt RSHFT F14
