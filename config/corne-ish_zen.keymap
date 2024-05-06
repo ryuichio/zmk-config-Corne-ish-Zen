@@ -39,7 +39,7 @@
                 };
                 td2: tap_dance_2 {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_DANCE_BACKSLASH";
+                        label = "TAP_DANCE_EQUAL";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&kp MINUS>, <&kp EQUAL>;
